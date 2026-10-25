@@ -1,0 +1,53 @@
+---
+title: "Pratcical_1_Introduction_to_R/prac1_excersizes.qmd"
+author: "Stanley Chhatwal"
+---
+```{r}
+library(tidyverse)
+library(gt)
+round(3.14159, digits=3)
+
+print(seq(1,10,2)) #count numbers from 1 to 10 in 2s
+
+print(rep(2,5))     #prints the number 2 5 times
+
+print(rep(5,7))
+
+x <- 7
+print(class(x)) #tells you whetheer x is numeric, character or logical
+
+y <- "nice"
+
+z <- TRUE
+
+print(class(x))
+print(class(y))
+print(class(z))
+
+cell_ID1 <- "CX1"
+cell_ID2 <- "CX2"
+treated1 <- TRUE
+treated2 <- FALSE
+before1 <- 5415
+before2 <- 8123
+after1 <- 1432
+after2 <- 7543
+
+my_first_vector <-c(1,2,3)
+print(my_first_vector)
+
+cell1 <- c(cell_ID1, treated1, before1, after1)
+cell2 <- c(cell_ID2, treated2, before2, after2)
+print(cell1)
+print(cell2)3
+
+mdf <- tibble(
+  cell_ID= c("CX1", "CX2"),
+  Treated= c(TRUE, FALSE),
+  Num_cells_before= c(5415, 8123),
+  Num_cells_after= c(1432, 7543)
+)
+ 
+gt(mdf)
+```
+
