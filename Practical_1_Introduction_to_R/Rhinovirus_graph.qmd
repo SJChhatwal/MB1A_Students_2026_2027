@@ -1,0 +1,25 @@
+---
+title: "Practical_1_introduction_to_R/ukhsa_data_analysis.qmd"
+author: "Stanley Chhatwal"
+
+```{r}
+library(tidyverse)
+library(gt)
+rhinovirus <- read_csv("data/ukhsa-chart-download-rhinovirus.csv")
+gt(head(rhinovirus))
+
+# I have selected the dataset Rhiovirus and used the head commans to ensure only the first 10 rows are visible so there is not too much data to visualise
+
+ggplot(rhinovirus, aes(
+  x = date,
+  y = metric_value
+)) + 
+geom_line() +
+ggtitle("Rhinovirus by Year") +
+xlab("year") +
+ylab("Incidence of Disease") 
+
+```
+
+---
+
