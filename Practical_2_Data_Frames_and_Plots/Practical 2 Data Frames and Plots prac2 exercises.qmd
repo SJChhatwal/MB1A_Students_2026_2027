@@ -1,0 +1,62 @@
+---
+title: "Practical_2_Data_Frames_and_Plots/prac2_exercises.qmd"
+author: "Stanley Chhatwal"
+
+```{r}
+library(gt)
+library(tidyverse)
+library(maps)
+
+#I have read the csv file and viewed it in R
+bird_breeding_sites <- read_csv("data/breeding_site_locations.csv")
+gt(bird_breeding_sites)
+
+#Use colnames to view just column names
+colnames(bird_breeding_sites)
+
+#Use glimpse to see a summary of the table
+glimpse(bird_breeding_sites)
+
+#<chr> or <dbl> refers to character or numeric data in the column
+
+#nrow or ncol can be used to see number of rows or columns. dim can be used to see both the dimensions
+
+print(ncol(bird_breeding_sites))
+print(nrow(bird_breeding_sites))
+print(dim(bird_breeding_sites))
+
+bird_migration_sites <- read_csv("data/migratory_connectivity_dataset.csv")
+
+#only want to see first 10 rows so use head function
+
+gt(head(bird_migration_sites))
+glimpse(bird_migration_sites)
+
+#100 rows and 34 columns. Tag is CHR and Birth is DBL
+
+bird_breeding_useful <- bird_breeding_sites |> select(Site, Longitude, Latitude) |> distinct()
+gt(bird_breeding_useful) 
+
+#distinct ensures that no duplicate rows are selected
+
+
+input_vec <- c(5,-10,4,-3)
+
+print(input_vec |>
+mean() |>
+abs() |>
+round())
+
+#performed a series of operations on the set of numbers above using pipe
+
+Y <- 12
+Y == 7
+Y < 15
+Y > 20
+Y <= 12
+
+#performed a series of comparison operations on Y
+```
+
+---
+
